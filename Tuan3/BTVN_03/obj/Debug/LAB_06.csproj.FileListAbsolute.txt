@@ -1,0 +1,57 @@
+D:\Lp trình\VS\BTVN_03\BTVN_03\bin\Debug\BTVN_03.exe.config
+D:\Lp trình\VS\BTVN_03\BTVN_03\bin\Debug\BTVN_03.exe
+D:\Lp trình\VS\BTVN_03\BTVN_03\bin\Debug\BTVN_03.pdb
+D:\Lp trình\VS\BTVN_03\BTVN_03\bin\Debug\Interop.WMPLib.dll
+D:\Lp trình\VS\BTVN_03\BTVN_03\bin\Debug\AxInterop.WMPLib.dll
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\LAB_06.csproj.AssemblyReference.cache
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\Interop.WMPLib.dll
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\AxInterop.WMPLib.dll
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\LAB_06.csproj.ResolveComReference.cache
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\BTVN_03.About.resources
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\BTVN_03.Form1.resources
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\BTVN_03.MDIMain.resources
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\BTVN_03.Properties.Resources.resources
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\LAB_06.csproj.GenerateResource.cache
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\LAB_06.csproj.CoreCompileInputs.cache
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\BTVN_03.exe
+D:\Lp trình\VS\BTVN_03\BTVN_03\obj\Debug\BTVN_03.pdb
+C:\Users\abcmn\Downloads\BTVN_03\BTVN_03\obj\Debug\Lab_06.csproj.AssemblyReference.cache
+C:\Users\abcmn\Downloads\BTVN_03\BTVN_03\obj\Debug\Interop.WMPLib.dll
+C:\Users\abcmn\Downloads\BTVN_03\BTVN_03\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\abcmn\Downloads\BTVN_03\BTVN_03\obj\Debug\Lab_06.csproj.ResolveComReference.cache
+C:\Users\abcmn\Downloads\BTVN_03\BTVN_03\obj\Debug\BTVN_03.exe
+C:\Users\abcmn\Downloads\BTVN_03\BTVN_03\obj\Debug\BTVN_03.pdb
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\Lab_06.csproj.AssemblyReference.cache
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\Interop.WMPLib.dll
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\AxInterop.WMPLib.dll
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\Lab_06.csproj.ResolveComReference.cache
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\BTVN_03.exe
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\BTVN_03.pdb
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\bin\Debug\BTVN_03.exe.config
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\bin\Debug\BTVN_03.exe
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\bin\Debug\BTVN_03.pdb
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\bin\Debug\Interop.WMPLib.dll
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\bin\Debug\AxInterop.WMPLib.dll
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\BTVN_03.About.resources
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\BTVN_03.Form1.resources
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\BTVN_03.MDIMain.resources
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\BTVN_03.Properties.Resources.resources
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\Lab_06.csproj.GenerateResource.cache
+D:\code\LTTMTWindows\BTVN_03\BTVN_03\obj\Debug\Lab_06.csproj.CoreCompileInputs.cache
+D:\code\LTTMTWindows\Tuan3\BTVN_03\bin\Debug\BTVN_03.exe.config
+D:\code\LTTMTWindows\Tuan3\BTVN_03\bin\Debug\BTVN_03.exe
+D:\code\LTTMTWindows\Tuan3\BTVN_03\bin\Debug\BTVN_03.pdb
+D:\code\LTTMTWindows\Tuan3\BTVN_03\bin\Debug\Interop.WMPLib.dll
+D:\code\LTTMTWindows\Tuan3\BTVN_03\bin\Debug\AxInterop.WMPLib.dll
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\Lab_06.csproj.AssemblyReference.cache
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\Interop.WMPLib.dll
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\AxInterop.WMPLib.dll
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\Lab_06.csproj.ResolveComReference.cache
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\BTVN_03.About.resources
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\BTVN_03.Form1.resources
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\BTVN_03.MDIMain.resources
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\BTVN_03.Properties.Resources.resources
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\Lab_06.csproj.GenerateResource.cache
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\Lab_06.csproj.CoreCompileInputs.cache
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\BTVN_03.exe
+D:\code\LTTMTWindows\Tuan3\BTVN_03\obj\Debug\BTVN_03.pdb

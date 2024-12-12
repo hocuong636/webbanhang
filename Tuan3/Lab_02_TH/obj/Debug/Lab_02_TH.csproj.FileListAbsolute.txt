@@ -1,0 +1,26 @@
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\bin\Debug\Lab_02_TH.exe.config
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\bin\Debug\Lab_02_TH.exe
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\bin\Debug\Lab_02_TH.pdb
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.csproj.AssemblyReference.cache
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Properties.Resources.resources
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.csproj.GenerateResource.cache
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.csproj.CoreCompileInputs.cache
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.exe
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.pdb
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Form1.resources
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Form2.resources
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Form3.resources
+D:\Lp trình\VS\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Form4.resources
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\bin\Debug\Lab_02_TH.exe.config
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\bin\Debug\Lab_02_TH.exe
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\bin\Debug\Lab_02_TH.pdb
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.csproj.AssemblyReference.cache
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Form1.resources
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Form2.resources
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Form3.resources
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Form4.resources
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.Properties.Resources.resources
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.csproj.GenerateResource.cache
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.csproj.CoreCompileInputs.cache
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.exe
+D:\code\LTTMTWindows\BTVN_03\Lab_02_TH\obj\Debug\Lab_02_TH.pdb
