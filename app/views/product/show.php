@@ -51,7 +51,7 @@
 
                         <div class="product-actions">
                             <button onclick="window.location.href='/Product/addToCart/<?php echo $product->id; ?>'" 
-                                    class="btn btn-primary btn-lg add-to-cart-btn">
+                                    class="btn btn-primary btn-md add-to-cart-btn ml-3">
                                 <i class="fas fa-shopping-cart mr-2"></i>
                                 Thêm vào giỏ hàng
                             </button>

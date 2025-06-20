@@ -1,132 +1,206 @@
 <?php include 'app/views/shares/header.php'; ?>
 
-<div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="h2 mb-0">Danh sách sản phẩm</h1>
-        <a href="/Product/add" class="btn btn-primary">
-            <i class="fas fa-plus-circle mr-2"></i>Thêm sản phẩm mới
-        </a>
-    </div>
-
-    <div class="row">
-        <?php foreach ($products as $product): ?>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm hover-effect">
-                    <?php if ($product->image): ?>
-                        <div class="product-image-wrapper">
-                            <img src="/<?php echo $product->image; ?>" 
-                                 alt="<?php echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?>" 
-                                 class="card-img-top product-image">
-                        </div>
-                    <?php endif; ?>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="/Product/show/<?php echo $product->id; ?>" class="text-dark text-decoration-none">
-                                <?php echo htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?>
-                            </a>
-                        </h5>
-                        
-                        <p class="card-text text-muted mb-2">
-                            <?php echo htmlspecialchars($product->description, ENT_QUOTES, 'UTF-8'); ?>
-                        </p>
-                        
-                        <div class="product-details">
-                            <div class="price mb-2">
-                                <strong class="text-primary">
-                                    <?php echo number_format($product->price, 0, ',', '.'); ?> VNĐ
-                                </strong>
-                            </div>
-                            
-                            <span class="badge badge-info mb-3">
-                                <?php echo htmlspecialchars($product->category_name, ENT_QUOTES, 'UTF-8'); ?>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card-footer bg-white border-top-0">
-                        <div class="btn-group d-flex" role="group">
-                            <a href="/Product/edit/<?php echo $product->id; ?>" 
-                               class="btn btn-outline-warning btn-sm flex-grow-1">
-                                <i class="fas fa-edit mr-1"></i>Sửa
-                            </a>
-                            <a href="/Product/delete/<?php echo $product->id; ?>" 
-                               class="btn btn-outline-danger btn-sm flex-grow-1"
-                               onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');">
-                                <i class="fas fa-trash-alt mr-1"></i>Xóa
-                            </a>
-                            <a href="/Product/addToCart/<?php echo $product->id; ?>" 
-                               class="btn btn-outline-primary btn-sm flex-grow-1">
-                                <i class="fas fa-cart-plus mr-1"></i>Thêm vào giỏ
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</div>
-
 <style>
-.product-image-wrapper {
-    height: 200px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.product-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.hover-effect {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-effect:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
-}
-
-.hover-effect:hover .product-image {
-    transform: scale(1.05);
+.page-header {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    margin-bottom: 2rem;
 }
 
 .card {
     border: none;
-    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 1.5rem;
 }
 
 .card-title {
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
+.card-title a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.card-title a:hover {
+    color: #3498db;
+}
+
 .card-text {
-    font-size: 0.9rem;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-
-.badge {
-    font-weight: 500;
-    padding: 0.5em 1em;
-}
-
-.btn-group .btn {
-    border-radius: 4px;
-    margin: 0 2px;
+    color: #666;
+    margin-bottom: 0.5rem;
 }
 
 .price {
-    font-size: 1.1rem;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: #f1f1f1;
+    color: #666;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.btn-group {
+    margin-top: 1rem;
+}
+
+.btn-group .btn {
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
 }
 </style>
+
+<div class="page-header">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="mb-0">Danh sách sản phẩm</h1>
+        <?php if (SessionHelper::isAdmin()): ?>
+            <a href="/Product/add" class="btn btn-primary">
+                <i class="fas fa-plus mr-1"></i>Thêm sản phẩm mới
+            </a>
+        <?php endif; ?>
+    </div>
+</div>
+
+<div id="product-list" class="row">
+    <!-- Danh sách sản phẩm sẽ được tải từ API -->
+</div>
+
+<script>
+async function loadProducts() {
+    const token = localStorage.getItem('jwtToken');
+    if (!token) {
+        alert('Bạn cần đăng nhập lại');
+        location.href = '/account/login';
+        return;
+    }
+
+    try {
+        const response = await fetch('/api/product', {
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Không thể tải danh sách sản phẩm');
+        }
+
+        const products = await response.json();
+        const productList = document.getElementById('product-list');
+        productList.innerHTML = '';
+
+        products.forEach(product => {
+            const productItem = document.createElement('div');
+            productItem.className = 'col-md-4 mb-4';
+            productItem.innerHTML = `
+                <div class="card h-100">
+                    <img src="${product.image ? '/' + product.image : '/uploads/default-product.jpg'}"
+                         class="card-img-top" alt="${product.name}">
+                         
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="/Product/show/${product.id}">
+                                ${product.name}
+                            </a>
+                        </h5>
+                        <p class="card-text text-truncate">
+                            ${product.description}
+                        </p>
+                        <p class="price">
+                            ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}
+                        </p>
+                        <span class="category-badge">
+                            <i class="fas fa-tag mr-1"></i>
+                            ${product.category_name}
+                        </span>
+
+                        <div class="btn-group">
+                            ${!<?php echo SessionHelper::isAdmin() ? 'true' : 'false'; ?> ? `
+                                <a href="/Product/addToCart/${product.id}" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-cart-plus mr-1"></i>Thêm vào giỏ
+                                </a>
+                            ` : ''}
+
+                            ${<?php echo SessionHelper::isAdmin() ? 'true' : 'false'; ?> ? `
+                                <a href="/Product/edit/${product.id}" class="btn btn-outline-warning btn-sm">
+                                    <i class="fas fa-edit mr-1"></i>Sửa
+                                </a>
+                                <button onclick="deleteProduct(${product.id})" class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-trash mr-1"></i>Xóa
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+            productList.appendChild(productItem);
+        });
+    } catch (error) {
+        alert('Có lỗi xảy ra: ' + error.message);
+    }
+}
+
+async function deleteProduct(id) {
+    if (!confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) {
+        return;
+    }
+
+    const token = localStorage.getItem('jwtToken');
+    if (!token) {
+        alert('Bạn cần đăng nhập lại');
+        location.href = '/account/login';
+        return;
+    }
+
+    try {
+        const response = await fetch(`/api/product/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert('Xóa sản phẩm thành công!');
+            loadProducts(); // Tải lại danh sách
+        } else {
+            alert(result.message || 'Xóa sản phẩm thất bại');
+        }
+    } catch (error) {
+        alert('Có lỗi xảy ra: ' + error.message);
+    }
+}
+
+// Tải danh sách sản phẩm khi trang được load
+document.addEventListener('DOMContentLoaded', loadProducts);
+</script>
 
 <?php include 'app/views/shares/footer.php'; ?>

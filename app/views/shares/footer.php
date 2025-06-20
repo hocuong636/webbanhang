@@ -38,7 +38,3 @@ instagram"></i></a>
         © 2025 Quản lý sản phẩm. All rights reserved.
     </div>
 </footer>
-
-<!-- Font Awesome Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js"
-    crossorigin="anonymous"></script>

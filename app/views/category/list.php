@@ -1,59 +1,69 @@
 <?php include 'app/views/shares/header.php'; ?>
-
-<div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Danh sách danh mục</h2>
-        <a href="/Category/add" class="btn btn-primary">
-            <i class="fas fa-plus-circle mr-2"></i>Thêm danh mục mới
+<h1>Danh sách danh mục</h1>
+<div class="row mb-3">
+    <div class="col">
+        <a href="/Category/add" class="btn btn-success">
+            <i class="fas fa-plus"></i> Thêm danh mục mới
         </a>
-    </div>
-
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <table class="table table-hover">
-                <thead class="table-light">
-                    <tr>
-                        <th>Tên danh mục</th>
-                        <th>Mô tả</th>
-                        <th>Thao tác</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($categories as $category): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($category->name, ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td><?php echo htmlspecialchars($category->description, ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td>
-                            <div class="btn-group" role="group">
-                                <a href="/Category/edit/<?php echo $category->id; ?>"
-                                   class="btn btn-outline-warning btn-sm">
-                                    <i class="fas fa-edit mr-1"></i>Sửa
-                                </a>
-                                <a href="/Category/delete/<?php echo $category->id; ?>"
-                                   class="btn btn-outline-danger btn-sm"
-                                   onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này?');">
-                                    <i class="fas fa-trash-alt mr-1"></i>Xóa
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
     </div>
 </div>
 
-<style>
-.btn-group .btn {
-    border-radius: 4px;
-    margin: 0 2px;
-}
-
-.card {
-    border: none;
-    border-radius: 8px;
-}
-</style>
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tên danh mục</th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="category-list">
+            <!-- Danh sách danh mục sẽ được tải từ API và hiển thị tại đây -->
+        </tbody>
+    </table>
+</div>
 
 <?php include 'app/views/shares/footer.php'; ?>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('/api/category')
+            .then(response => response.json())
+            .then(data => {
+                const categoryList = document.getElementById('category-list');
+                data.forEach((category, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${category.name}</td>
+                        <td>${category.description}</td>
+                        <td>
+                            <a href="/Category/edit/${category.id}" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i> Sửa
+                            </a>
+                            <button class="btn btn-danger btn-sm" onclick="deleteCategory(${category.id})">
+                                <i class="fas fa-trash"></i> Xóa
+                            </button>
+                        </td>
+                    `;
+                    categoryList.appendChild(row);
+                });
+            });
+    });
+
+    function deleteCategory(id) {
+        if (confirm('Bạn có chắc chắn muốn xóa danh mục này?')) {
+            fetch(`/api/category/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message && data.message.includes('success')) {
+                        location.reload();
+                    } else {
+                        alert('Xóa danh mục thất bại');
+                    }
+                });
+        }
+    }
+</script>

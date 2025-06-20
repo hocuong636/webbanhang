@@ -41,12 +41,8 @@ class CategoryController
 
     public function edit($id)
     {
-        $category = $this->categoryModel->getCategory($id);
-        if ($category) {
-            include 'app/views/category/edit.php';
-        } else {
-            echo "Không tìm thấy danh mục.";
-        }
+        $editId = $id;
+        include 'app/views/category/edit.php';
     }
 
     public function update()

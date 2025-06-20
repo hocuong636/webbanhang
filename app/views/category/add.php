@@ -1,54 +1,45 @@
 <?php include 'app/views/shares/header.php'; ?>
 
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h2 class="card-title mb-4">Thêm danh mục mới</h2>
-                    
-                    <form action="/Category/save" method="POST">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Tên danh mục</label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="name"
-                                   name="name"
-                                   required>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Mô tả</label>
-                            <textarea class="form-control"
-                                      id="description"
-                                      name="description"
-                                      rows="3"></textarea>
-                        </div>
-                        
-                        <div class="d-flex justify-content-between">
-                            <a href="/Category" class="btn btn-outline-secondary">
-                                <i class="fas fa-arrow-left mr-1"></i>Quay lại
-                            </a>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save mr-1"></i>Thêm danh mục
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<h1>Thêm danh mục mới</h1>
+<form id="add-category-form">
+    <div class="form-group">
+        <label for="name">Tên danh mục:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
     </div>
-</div>
-
-<style>
-.card {
-    border: none;
-    border-radius: 8px;
-}
-
-.card-title {
-    font-weight: 500;
-}
-</style>
+    <div class="form-group">
+        <label for="description">Mô tả:</label>
+        <textarea id="description" name="description" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Thêm danh mục</button>
+</form>
+<a href="/Category/list" class="btn btn-secondary mt-2">Quay lại danh sách danh mục</a>
 
 <?php include 'app/views/shares/footer.php'; ?>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('add-category-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                description: formData.get('description')
+            };
+            
+            fetch('/api/category', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message && data.message.includes('success')) {
+                    location.href = '/Category';
+                } else {
+                    alert('Thêm danh mục thất bại');
+                }
+            });
+        });
+    });
+</script>

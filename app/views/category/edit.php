@@ -1,56 +1,58 @@
 <?php include 'app/views/shares/header.php'; ?>
-
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h2 class="card-title mb-4">Chỉnh sửa danh mục</h2>
-                    
-                    <form action="/Category/update" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $category->id; ?>">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Tên danh mục</label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="name"
-                                   name="name"
-                                   value="<?php echo htmlspecialchars($category->name, ENT_QUOTES, 'UTF-8'); ?>"
-                                   required>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Mô tả</label>
-                            <textarea class="form-control"
-                                      id="description"
-                                      name="description"
-                                      rows="3"><?php echo htmlspecialchars($category->description, ENT_QUOTES, 'UTF-8'); ?></textarea>
-                        </div>
-                        
-                        <div class="d-flex justify-content-between">
-                            <a href="/Category" class="btn btn-outline-secondary">
-                                <i class="fas fa-arrow-left mr-1"></i>Quay lại
-                            </a>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save mr-1"></i>Cập nhật
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<h1>Sửa danh mục</h1>
+<form id="edit-category-form">
+    <input type="hidden" id="id" name="id">
+    <div class="form-group">
+        <label for="name">Tên danh mục:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
     </div>
-</div>
-
-<style>
-.card {
-    border: none;
-    border-radius: 8px;
-}
-
-.card-title {
-    font-weight: 500;
-}
-</style>
+    <div class="form-group">
+        <label for="description">Mô tả:</label>
+        <textarea id="description" name="description" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+</form>
+<a href="/Category/list" class="btn btn-secondary mt-2">Quay lại danh sách danh mục</a>
 
 <?php include 'app/views/shares/footer.php'; ?>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const categoryId = <?= $editId ?>;
+        
+        // Lấy thông tin danh mục hiện tại
+        fetch(`/api/category/${categoryId}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('id').value = data.id;
+                document.getElementById('name').value = data.name;
+                document.getElementById('description').value = data.description;
+            });
+
+        // Xử lý submit form
+        document.getElementById('edit-category-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const categoryId = formData.get('id');
+            const data = {
+                name: formData.get('name'),
+                description: formData.get('description')
+            };
+
+            fetch(`/api/category/${categoryId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message && data.message.includes('success')) {
+                    location.href = '/Category';
+                } else {
+                    alert('Cập nhật danh mục thất bại');
+                }
+            });
+        });
+    });
+</script>
